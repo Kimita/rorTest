@@ -1,0 +1,5 @@
+eval_gemfile "Gemfile"
+
+gem 'solargraph', group: :development
+gem 'nokogiri', group: :development
+gem 'derailed_benchmarks', group: :development
