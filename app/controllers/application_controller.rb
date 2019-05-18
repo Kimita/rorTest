@@ -2,7 +2,16 @@ class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
 
     def root
-        render html: "ここが, 世界の始まり!"
+        @links = [
+            {
+                :title => 'users',
+                :path  => users_path,
+            },
+            {
+                :title => 'microposts',
+                :path  => microposts_path,
+            },
+        ]
     end
 
     def hello
