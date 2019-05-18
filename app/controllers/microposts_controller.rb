@@ -14,6 +14,7 @@ class MicropostsController < ApplicationController
 
   # GET /microposts/new
   def new
+    logger.debug([controller_name, action_name])
     @micropost = Micropost.new
   end
 
@@ -24,13 +25,17 @@ class MicropostsController < ApplicationController
   # POST /microposts
   # POST /microposts.json
   def create
+    logger.debug([controller_name, action_name])
     @micropost = Micropost.new(micropost_params)
 
+    logger.debug('check00')
     respond_to do |format|
       if @micropost.save
+        logger.debug('check10')
         format.html { redirect_to @micropost, notice: 'Micropost was successfully created.' }
         format.json { render :show, status: :created, location: @micropost }
       else
+        logger.debug('check20')
         format.html { render :new }
         format.json { render json: @micropost.errors, status: :unprocessable_entity }
       end
