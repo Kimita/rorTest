@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
                 :title => 'users',
                 :path  => users_path,
             },
+            {
+                :title => 'microposts',
+                :path  => microposts_path,
+            },
         ]
     end
 
