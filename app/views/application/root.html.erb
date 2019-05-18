@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Top</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Page</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @links.each do |link| %>
+      <tr>
+        <td><%= link[:title] %></td>
+        <td><%= link_to link[:path], link[:path] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
