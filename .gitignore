@@ -33,3 +33,6 @@
 
 /vendor/bundle
 .env
+
+# Ignore for Developement
+.idea
