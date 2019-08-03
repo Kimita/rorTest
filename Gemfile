@@ -28,11 +28,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'dotenv-rails'
 
 group :production do
-  gem 'sqlite3'
   gem 'mysql2', '0.4.10'
 end
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
@@ -44,6 +44,12 @@ group :development do
 end
 
 group :test do
+  # Tutorial: list-3.2
+  gem 'rails-controller-testing'
+  gem 'minitest'
+  gem 'minitest-reporters'
+  gem 'guard'
+  gem 'guard-minitest'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
